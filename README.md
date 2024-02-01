@@ -25,9 +25,9 @@ The UDP Chat Application is a simple console-based chat system that allows commu
 The application uses a PostgreSQL database to store chat logs.
 #### Create Database in psql with name chat_udp
 `CREATE DATABASE chat_udp;`
-**default user: postgres**
-**default passsword: postgres**
-**default PORT: 5432**
+###### Default user: **postgres**
+###### Default passsword: **postgres**
+###### Default PORT: **5432**
 Make sure to replace the database connection details with the appropriate values for your setup.
 
 ### -To Use The Application:
