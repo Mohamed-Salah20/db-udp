@@ -1,4 +1,4 @@
-# UDP Chat Application Documentation
+# UDP Chat Application
 
 ## Overview
 
