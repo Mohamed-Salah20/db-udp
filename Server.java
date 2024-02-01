@@ -10,6 +10,9 @@ import java.util.Arrays;
 
 public class Server implements Runnable {
     
+    //
+    DB db = new DB();    
+
     // Define the server port and buffer size
     public static final int PORT = 2020;
     private static final int BUFFER_SIZE = 1024;
@@ -24,6 +27,7 @@ public class Server implements Runnable {
 
     // Constructor initializes the server
     public Server() throws SocketException {
+
       this.socket = new DatagramSocket(PORT); 
       System.out.println("Server running and is listning on port " + PORT);
       
@@ -54,8 +58,7 @@ public class Server implements Runnable {
                 String id = clinetAddress.toString() + "|" + clientPort;
                 
                 // Add Msg and Client information to Database
-                try {
-                    DB db = new DB();
+                try {                                                
                     db.insertMsgTable(clinetAddress, clientPort, msg);
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -106,6 +109,7 @@ public class Server implements Runnable {
     }
     public static void main(String[] args) {
         try {
+            
             Server server = new Server();
             new Thread(server).start();
         } catch (SocketException e) {
