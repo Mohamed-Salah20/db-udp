@@ -27,7 +27,7 @@ The UDP Chat Application is a simple console-based chat system that allows commu
 #### -To install:
 ##### -First check java jdk is installed & working :
 `java --version`
-##### -compile two programs that include main functions Client.java, ServerMain.java:
+##### -compile two programs that include main functions Client.java, Server.java:
 `javac Client.java ;`
 `javac Server.java ;`
 #### To run the app
