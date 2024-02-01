@@ -32,19 +32,16 @@ Make sure to replace the database connection details with the appropriate values
 
 ### -To Use The Application:
 ##### -First Download:
-`git clone https://github.com/Mohamed-Salah20/udp.git`
+`git clone -b dp-udp --single-branch https://github.com/Mohamed-Salah20/udp.git`
 ##### -then go to the project directory:
-`cd tcp`
+`cd udp`
 #### -To install:
 ##### -First check java jdk is installed & working :
 `java --version`
-##### -compile two programs that include main functions Client.java, Server.java:
-`javac Client.java ;`
-`javac Server.java ;`
-#### To run the app
-##### -make sure to run the server first:
-`java Server`
-##### -in other terminals run any number of clients:
+##### -Run the provided run.sh script, which will compile all files with JDBC jar and runs the Server :
+`chmod +x run.sh ; `      
+`./run.sh`
+##### -in other terminals run any number of clients on the same path using JVM launcher : 
 `java Client`
-#### -To exit program:
+#### -To exit program :
 `/exit`
