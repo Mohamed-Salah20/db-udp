@@ -7,7 +7,7 @@ The UDP Chat Application is a simple console-based chat system that allows commu
 ### Components
 
 1. **Server**
-   - Listens for incoming messages from clients.
+   - Listens for incoming messages from clients on **PORT** 2020.
    - Distributes received messages to all connected clients.
    - Maintains a list of connected clients.
 
@@ -19,6 +19,17 @@ The UDP Chat Application is a simple console-based chat system that allows commu
 
 - **Java:** The application is implemented in Java, utilizing its DatagramSocket and DatagramPacket classes for UDP communication.
 - **Java Threads:** The application employs Java threads to enable concurrent execution of tasks. Threads are used for both the server and client components, allowing the server to handle multiple client connections concurrently and enabling clients to send and receive messages simultaneously.
+
+### Database Integration
+
+The application uses a PostgreSQL database to store chat logs.
+####Create Database in psql with name chat_udp
+`CREATE DATABASE chat_udp;`
+**default user: postgres**
+**default passsword: postgres**
+**default PORT: 5432**
+Make sure to replace the database connection details with the appropriate values for your setup.
+
 ### -To Use The Application:
 ##### -First Download:
 `git clone https://github.com/Mohamed-Salah20/udp.git`
