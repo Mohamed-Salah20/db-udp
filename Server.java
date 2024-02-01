@@ -4,6 +4,7 @@ import java.net.DatagramSocket;
 import java.util.HashSet;
 import java.net.InetAddress;
 import java.net.SocketException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -52,6 +53,15 @@ public class Server implements Runnable {
                 int clientPort = packet.getPort();
                 String id = clinetAddress.toString() + "|" + clientPort;
                 
+                // Add Msg and Client information to Database
+                try {
+                    DB db = new DB();
+                    db.insertMsgTable(clinetAddress, clientPort, msg);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    System.err.println("Failed to Insert ");
+                }
+
                 // If the client is new, add its information to the lists
                 if (!existing_clients.contains(id)) {
                     existing_clients.add(id);
