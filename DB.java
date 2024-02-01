@@ -28,7 +28,7 @@ public class DB{
         }
     }
     
-    /*Droping tablr for testing */
+    /*Droping table for testing*/
     // private boolean dropMsqTable() throws SQLException{
     //     String dropTableSQL = "DROP TABLE IF EXISTS logs;";
     //     PreparedStatement preparedStatement = this.connection.prepareStatement(dropTableSQL);
@@ -44,7 +44,7 @@ public class DB{
             +"sender_address VARCHAR(15) NOT NULL,"
             +"sender_port INT NOT NULL CHECK (sender_port >= 0 AND sender_port <= 65535),"
             +"msg TEXT NOT NULL,"
-            +"log_date DATE NOT NULL" 
+            +"log_timestamp TIMESTAMP NOT NULL" 
             +");";
         PreparedStatement preparedStatement = this.connection.prepareStatement(createTableSQL);
         boolean isCreated  = preparedStatement.execute();
@@ -53,7 +53,7 @@ public class DB{
 
     public boolean insertMsgTable(InetAddress ipAddress,int senderPort,String msg) throws SQLException{
         
-        String insertSQL = "INSERT INTO logs (sender_address,sender_port,msg,log_date) VALUES (?,?,?, NOW())";
+        String insertSQL = "INSERT INTO logs (sender_address,sender_port,msg,log_timestamp) VALUES (?,?,?, NOW())";
         PreparedStatement preparedStatement = connection.prepareStatement(insertSQL);
         
         // preparedStatement.setObject(1, ipAddress, Types.OTHER); //Can't infer the SQL type to use for an instance of java.net.Inet4Address. Use setObject() with an explicit Types value to specify the type to use.
