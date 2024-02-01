@@ -18,3 +18,4 @@ The UDP Chat Application is a simple console-based chat system that allows commu
 ### Technologies Used
 
 - **Java:** The application is implemented in Java, utilizing its DatagramSocket and DatagramPacket classes for UDP communication.
+- **Java Threads:** The application employs Java threads to enable concurrent execution of tasks. Threads are used for both the server and client components, allowing the server to handle multiple client connections concurrently and enabling clients to send and receive messages simultaneously.

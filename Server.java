@@ -19,9 +19,9 @@ public class Server implements Runnable {
     public Server() throws SocketException {
       this.socket = new DatagramSocket(PORT); 
       System.out.println("Server running and is listning on port " + PORT);
-      client_addresses = new ArrayList();
-      client_ports = new ArrayList();
-      existing_clients = new HashSet();
+      client_addresses = new ArrayList<>();
+      client_ports = new ArrayList<>();
+      existing_clients = new HashSet<>();
     }
 
     @Override
