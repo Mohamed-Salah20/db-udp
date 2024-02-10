@@ -32,7 +32,7 @@ Make sure to replace the database connection details with the appropriate values
 
 ### -To Use The Application:
 ##### -First Download:
-`git clone -b dp-udp --single-branch https://github.com/Mohamed-Salah20/udp.git`
+`git clone https://github.com/Mohamed-Salah20/udp.git`
 ##### -then go to the project directory:
 `cd udp`
 #### -To install:
